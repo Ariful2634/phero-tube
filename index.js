@@ -48,6 +48,7 @@ const hub=(alll)=>{
     const alllCategory = document.getElementById('all-cat');
     const drawing = document.getElementById('draw')
     alllCategory.textContent='';
+    drawing.textContent='';
     if(sorted){
         alll.sort((a,b)=>{
             const strA=parseInt(a.others.views);
@@ -58,9 +59,14 @@ const hub=(alll)=>{
     }
    if(dataLength){
     alll.forEach(vido => {
+        const time = vido.others.posted_date;
+        const toMinute=Math.floor((time%3600)/60);
+        const toHour=Math.floor(time/3600);
+        const convert = `${toHour} hr ${toMinute} min ago`
+        // console.log(toMinute, toHour)
         const img=vido.authors.map((im)=>im.profile_picture)
         const pics=vido.authors.map((aut)=>aut.profile_name)
-        console.log(pics)
+        // console.log(pics)
         const div = document.createElement('div');
         const vari = vido.authors.map((tick)=>{
             if(tick.verified===true){
@@ -72,7 +78,8 @@ const hub=(alll)=>{
         })
         div.innerHTML = `
         <div class="card h-96 bg-base-100 ">
-  <figure><img class="h-48 w-[400px] rounded-lg" src="${vido.thumbnail}" /></figure>
+  <figure><div class="relative"><img class="h-48 w-[400px] md:w-[350px] lg:w-[400px] rounded-lg" src="${vido.thumbnail}" /></div></figure>
+  ${time ? `<div class="absolute top-[130px] left-56 md:left-44 lg:left-40 bg-[#171717] text-white px-3 py-1 rounded-lg"><p>${convert}</p></div>`:""}
   <div class="card-body">
    <div class="flex flex-row items-center gap-4"><img class=" w-[40px] h-[40px] rounded-full" src="${img}"/>
    <h2 class="card-title">
@@ -126,3 +133,5 @@ const sort =async (id)=>{
     cats(vidId)
 }
 // sort()
+
+
