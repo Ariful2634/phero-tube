@@ -46,6 +46,7 @@ const cats =async (id=1000)=>{
 
 const hub=(alll)=>{
     const alllCategory = document.getElementById('all-cat');
+    const drawing = document.getElementById('draw')
     alllCategory.textContent='';
     if(sorted){
         alll.sort((a,b)=>{
@@ -59,24 +60,29 @@ const hub=(alll)=>{
     alll.forEach(vido => {
         const img=vido.authors.map((im)=>im.profile_picture)
         const pics=vido.authors.map((aut)=>aut.profile_name)
-        // const badge=vido.authors.map((bad)=>bad?.verified icon:)
-        // ${vido?'<img class="w-[]"src="images/svg.png">':''}
-        
-        
         console.log(pics)
         const div = document.createElement('div');
+        const vari = vido.authors.map((tick)=>{
+            if(tick.verified===true){
+                return `<img src="images/varified.svg"/>`
+            }
+            else{
+                return '';
+            }
+        })
         div.innerHTML = `
         <div class="card h-96 bg-base-100 ">
-  <figure><img class="h-48 w-auto rounded-lg" src="${vido.thumbnail}" /></figure>
+  <figure><img class="h-48 w-[400px] rounded-lg" src="${vido.thumbnail}" /></figure>
   <div class="card-body">
    <div class="flex flex-row items-center gap-4"><img class=" w-[40px] h-[40px] rounded-full" src="${img}"/>
    <h2 class="card-title">
      ${vido.title}
-    
-   </h2></div>
-     <p class="ml-16">${pics}</p>
-     
-    <p class="ml-16">${vido.others.views} <span>views</span></p>
+   </h2>
+   </div>
+     <div class="ml-12">
+     <div class="flex gap-2">${pics}${vari}</div>
+    <p >${vido.others.views} <span>views</span></p>
+     </div>
   </div>
 </div>
         `
@@ -86,9 +92,13 @@ const hub=(alll)=>{
    else{
     const div = document.createElement('div');
     div.innerHTML=`
-    <h2>No data found</h2>
+    
+    <div class="flex flex-col justify-center items-center mt-10">
+    <img src="images/Icon.png" alt="" />
+    <b><h2 class="mt-6 text-4xl">Oops!! Sorry, There is no content here</h2></b>
+    </div>
     `
-    alllCategory.appendChild(div)
+    drawing.appendChild(div)
    }
 }
 
