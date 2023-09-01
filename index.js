@@ -79,7 +79,7 @@ const hub=(alll)=>{
         div.innerHTML = `
         <div class="card h-96 bg-base-100 ">
   <figure><div class="relative"><img class="h-48 w-[400px] md:w-[350px] lg:w-[400px] rounded-lg" src="${vido.thumbnail}" /></div></figure>
-  ${time ? `<div class="absolute top-[130px] left-56 md:left-44 lg:left-40 bg-[#171717] text-white px-3 py-1 rounded-lg"><p>${convert}</p></div>`:""}
+  ${time ? `<div class="absolute top-[145px] md:top-[145px] lg:top-[135px] left-[250px] md:left-48 lg:left-40 bg-[#171717] text-white px-1 md:px-1 lg:px-3 py-1 rounded-lg"><p>${convert}</p></div>`:""}
   <div class="card-body">
    <div class="flex flex-row items-center gap-4"><img class=" w-[40px] h-[40px] rounded-full" src="${img}"/>
    <h2 class="card-title">
