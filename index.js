@@ -1,6 +1,7 @@
 let sorted  = false;
 let vidId = 1000;
 let dataLength=0;
+
 // blog button
 
 const blog = () => {
@@ -63,10 +64,8 @@ const hub=(alll)=>{
         const toMinute=Math.floor((time%3600)/60);
         const toHour=Math.floor(time/3600);
         const convert = `${toHour} hr ${toMinute} min ago`
-        // console.log(toMinute, toHour)
         const img=vido.authors.map((im)=>im.profile_picture)
         const pics=vido.authors.map((aut)=>aut.profile_name)
-        // console.log(pics)
         const div = document.createElement('div');
         const vari = vido.authors.map((tick)=>{
             if(tick.verified===true){
@@ -114,7 +113,6 @@ cats()
 
 
 const vidCat =  (id)=>{
-    // console.log(id)
     vidId=id;
     cats(vidId) 
 }
