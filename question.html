@@ -21,7 +21,8 @@
             max-width: 80%;
             margin: auto;
         }
-        .q-1{
+
+        .q-1 {
             box-shadow: 0 0 5px gray;
             padding: 10px;
         }
@@ -32,57 +33,51 @@
     <section class="text">
         <h1>Discuss the scope of var, let, and const.</h1>
         <div class="q-1">
-            <p><span>Ans:</span> var, let, and const are three different ways to declare variables in JavaScript. They have distinct
+            <p><span>Ans:</span> var, let, and const are three different ways to declare variables in JavaScript. They
+                have distinct
                 scopes and behaviors, <br> which impact how they can be used and accessed within your code.</p>
             <span>1: var</span> <br>
             <ul>
-                <li>Variables declared with <b>var</b> are function-scoped, meaning they are only accessible within the
-                    function in which they are declared. <br> If declared outside any function, they become globally
-                    scoped.</li>
-                <li><b>var</b> declarations are hoisted to the top of their function or global scope. This means you can
-                    access and use a variable before <br> it's declared, but its value will be undefined.</li>
+                <li><b>var</b> defined variables are function-scoped, which means that only the function in which
+                    they are declared can access them. <br>They become globally scoped if defined outside of any
+                    function.</li>
+                <li>The global or function scope is where <b>var</b> declarations are placed. This means that even though a variable can be accessed <br> and used before it is declared, its value is unknown.</li>
             </ul> <br>
             <span>2: let</span>
             <ul>
                 <li>Variables declared with <b>let</b> are block-scoped, meaning they are accessible only within the
                     block (curly braces) in which they are defined.</li>
-                <li><b>let</b> variables are not hoisted to the top of their block, so you cannot access them before the
-                    line they are declared on.</li>
+                <li>You cannot access <b>let</b> variables prior to the line on which they are declared because they are not hoisted to the top of their block.</li>
             </ul> <br>
             <span>3: const</span>
             <ul>
                 <li>Variables declared with <b>const</b> are also block-scoped, just like let.</li>
-                <li><b>const</b> variables must be assigned a value when they are declared, and this value cannot be
-                    changed afterward. It creates a constant <br>reference to the value.</li>
+                <li>When a <b>const</b> variable is declared, it must be given a value that cannot be modified afterwards. A constant reference to the value is created.</li>
             </ul>
         </div>
         <br>
         <h1>Tell us the use cases of null and undefined</h1>
         <div class="q-1">
-            <p><span>Ans:</span> In JavaScript, null and undefined are two distinct values that indicate the absence of a meaningful
+            <p><span></span> In JavaScript, null and undefined are two distinct values that indicate the absence of a
+                meaningful
                 value. They are often used in different <br> scenarios based on their characteristics.</p>
             <br>
             <span>1: undefined</span>
             <ul>
-                <li><b>undefined</b> represents a variable that has been declared but has not been assigned a value. It's
-                    the default value for variables that haven't <br>been initialized.</li>
+                <li>A variable that has been declared but not given a value is represented by the word <b>undefined.</b> For variables that haven't been initialised, <br> it serves as the default value.</li>
                 <li>It can also indicate the absence of a return value from a function or the absence of a specified
                     property in an object.</li>
             </ul> <br>
             <span>2: null</span>
             <ul>
-                <li><b>null</b> is an explicit value that represents the intentional absence of any object value. It's often
-                    used when you want to explicitly <br> indicate that a variable has no value or that a property
-                    intentionally doesn't contain any value.</li>
+                <li>An explicit value called <b>null</b> stands for the purposeful absence of any object value. It's frequently employed when you wish to make <br> it clear that a variable or attribute purposefully lacks any value.</li>
                 <li><b>null</b> is often used when you want to reset an object reference, effectively saying that the
                     variable points to no object.</li>
             </ul>
         </div> <br>
         <h1>What do you mean by REST API?</h1>
         <div class="q-1">
-            <p>An API, or application programming interface, is a set of rules that define how applications or devices can
-                connect to and communicate with <br> each other. A REST API is an API that conforms to the design principles
-                of the REST, or representational state transfer architectural style.</p>
+            <p>Application programming interfaces, or APIs, are a collection of guidelines that specify how devices and software can connect to and communicate with one another. An API that adheres to the representational state transfer, or REST, design principles is known <br>as a REST API.</p>
         </div>
     </section>
 </body>
